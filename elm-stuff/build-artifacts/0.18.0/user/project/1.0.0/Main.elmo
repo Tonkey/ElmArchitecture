@@ -1,0 +1,176 @@
+var _user$project$Main$crazyMath = F3(
+	function (n, lastRes, lastOp) {
+		crazyMath:
+		while (true) {
+			if (_elm_lang$core$Native_Utils.cmp(n, 199) > 0) {
+				return 4 * lastRes;
+			} else {
+				if (_elm_lang$core$Native_Utils.eq(lastOp, '-')) {
+					var _v0 = n + 2,
+						_v1 = lastRes + ((2 / n) | 0),
+						_v2 = '+';
+					n = _v0;
+					lastRes = _v1;
+					lastOp = _v2;
+					continue crazyMath;
+				} else {
+					var _v3 = n + 2,
+						_v4 = lastRes - ((2 / n) | 0),
+						_v5 = '-';
+					n = _v3;
+					lastRes = _v4;
+					lastOp = _v5;
+					continue crazyMath;
+				}
+			}
+		}
+	});
+var _user$project$Main$crazyMathRes = A3(_user$project$Main$crazyMath, 1, 0, '+');
+var _user$project$Main$factorialList = {
+	ctor: '::',
+	_0: 1,
+	_1: {
+		ctor: '::',
+		_0: 2,
+		_1: {
+			ctor: '::',
+			_0: 3,
+			_1: {
+				ctor: '::',
+				_0: 4,
+				_1: {
+					ctor: '::',
+					_0: 5,
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	}
+};
+var _user$project$Main$factorialCal = function (facList) {
+	return _elm_lang$core$Native_Utils.eq(
+		_elm_lang$core$List$length(facList),
+		0) ? 0 : _elm_lang$core$List$product(facList);
+};
+var _user$project$Main$facCalRes = _user$project$Main$factorialCal(_user$project$Main$factorialList);
+var _user$project$Main$points = {
+	ctor: '::',
+	_0: {ctor: '_Tuple2', _0: 1, _1: 2},
+	_1: {
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 3, _1: 4},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 5, _1: 6},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 7, _1: 8},
+				_1: {ctor: '[]'}
+			}
+		}
+	}
+};
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'Exercise 1 called with: ',
+							_elm_lang$core$Basics$toString(_user$project$Main$points))),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Exercise 1 is not completed, I kept running in to type missmatching problem when extracting the tuple'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									'Exercise 2 called with: ',
+									_elm_lang$core$Basics$toString(_user$project$Main$factorialList))),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'Exercise 2 result: ',
+										_elm_lang$core$Basics$toString(_user$project$Main$facCalRes))),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Exercise 3 called with: n=1, lastRes=0, lastOp=+'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												'Exercise 3 result: ',
+												_elm_lang$core$Basics$toString(_user$project$Main$crazyMathRes))),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{content: _p0._0});
+	});
+var _user$project$Main$model = {content: ''};
+var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Main$model, view: _user$project$Main$view, update: _user$project$Main$update})();
+var _user$project$Main$Model = function (a) {
+	return {content: a};
+};
+var _user$project$Main$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};
